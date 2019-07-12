@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     '정우영',
+    '나혜원',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
