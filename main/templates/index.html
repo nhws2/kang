@@ -14,8 +14,9 @@
 
     <form>
         <p align="right">
-            <a href="">회원가입</a>
-            <a href="">로그인</a>
+                <a href="{%url 'signup'%}">회원가입</a>
+                <a href="{%url 'login'%}">로그인</a>
+                {% endif %}
         </p>
         <p align="center">
 
@@ -114,7 +115,7 @@
     <table>
         <tr>
             <td>
-                <a href=""><img src="해피새아사진.jpg"></a>
+                <a href=""><img src="해피새아사진.jpg" border="0"></a>
             </td>
             <td></td>
             <td></td>
