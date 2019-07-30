@@ -21,9 +21,11 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
 class Profile(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	name = models.CharField(max_length=50) 
-	region = models.CharField(max_length=50)
-    age = models.DateField(blank=True)
-    field = models.TextField(blank=True)
-    job = models.CharField(max_length=50)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50) 
+    region = models.CharField(max_length=50)
+    sex = models.TextField(blank = True)
+    age = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    job = models.TextField(blank = True)
+    field = models.TextField(blank = True)

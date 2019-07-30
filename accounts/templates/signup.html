@@ -1,20 +1,95 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="{%url 'signup'%}" method="post">
-		{%csrf_token%}
-		Username:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password1" type="password" value="">
-    <br>
-    Confirm Password:
-    <br>
-    <input name="password2" type="password" value="">
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Sign Up!">
-</form>
+<center style="margin-top:3em;">
+  <div style="width:20em;">
+    <form action="{%url 'signup'%}" method="post">
+      {%csrf_token%}
+      <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="ID" aria-label="ID" name="ID" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap">
+        <input type="password" class="form-control" placeholder="password" aria-label="password1" name="password1"
+          aria-describedby="addon-wrapping">
+      </div>
+
+      <div class="input-group flex-nowrap">
+        <input type="password" class="form-control" placeholder="password 확인" aria-label="password2" name="password2"
+          aria-describedby="addon-wrapping">
+      </div>
+
+      <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="이름(2자 이상으로 작성해주세요.)" aria-label="name" name="name"
+          aria-describedby="addon-wrapping">
+      </div>
+
+      <div class="input-group flex-nowrap">
+        <select class="form-control" id="sex" name="sex">
+          <option selected disabled>성별</option>
+          <option>남성</option>
+          <option>여성</option>
+        </select>
+      </div>
+
+      <div class="input-group flex-nowrap">
+          <select class="form-control" id="region" name="region">
+            <option selected disabled>지역</option>
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+            <option>대전</option>
+            <option>충북</option>
+            <option>충남</option>
+            <option>강원</option>
+            <option>광주</option>
+            <option>대구</option>
+            <option>경북</option>
+            <option>부산</option>
+            <option>울산</option>
+            <option>경남</option>
+            <option>전북</option>
+            <option>전남</option>
+            <option>제주</option>
+          </select>
+        </div>
+
+      <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="생년월일 (Ex.19980714)" aria-label="age" name="age"
+          aria-describedby="addon-wrapping">
+      </div>
+
+      <div class="input-group flex-nowrap">
+          <input type="text" class="form-control" placeholder="연락처 (Ex.010-1234-5678)" aria-label="phone" name="phone"
+            aria-describedby="addon-wrapping">
+        </div>
+
+      <div class="input-group flex-nowrap">
+          <select class="form-control" id="job" name="job">
+            <option selected disabled>직업</option>
+            <option>학생</option>
+            <option>직장인</option>
+            <option>자영업</option>
+            <option>주부</option>
+            <option>무직</option>
+          </select>
+        </div>
+
+        <div class="input-group flex-nowrap">
+            <select class="form-control" id="field" name="field">
+              <option selected disabled>관심분야</option>
+              <option>뷰티/헬스</option>
+              <option>어학/학문</option>
+              <option>시사/경제</option>
+              <option>자기계발</option>
+              <option>인간관계</option>
+              <option>만화/그림</option>
+              <option>음악/예술</option>
+              <option>독서/영화</option>
+              <option>영업/마케팅</option>
+              <option>SNS/유튜브</option>
+            </select>
+          </div>
+        <input class="btn btn-dark" type="submit" value="가입 완료">
+    </form>
+  </div>
+</center>
 {% endblock %}

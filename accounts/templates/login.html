@@ -1,19 +1,21 @@
 {% extends 'index.html' %}
 {% block content %}
-<h1>Login</h1>
-<form method="POST" action="{% url 'login'%}">
-	{% csrf_token %}
-    Username:
-    <br>
-    <input name="username" type="text" value="">
-    <br>
-    Password:
-    <br>
-    <input name="password" type="password" value="">
-    <br>
-    <br>
-    <input class="btn btn-primary" type="submit" value="Login">
-</form>
+<center style="margin-top:3em;">
+    <div style="width:20em;">
+        <form method="POST" action="{% url 'login'%}">
+            {% csrf_token %}
+            <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="ID" aria-label="ID" name="ID" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <input type="password" class="form-control" placeholder="password" aria-label="password" name="password"
+                    aria-describedby="addon-wrapping">
+                </div>
+            <input class="btn btn-dark" type="submit" value="로그인">
+        </form>
+    </div>
+</center>
+
 {% endblock %}
 
 {% if error %}

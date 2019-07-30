@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +8,103 @@
     <title>강연의 민족</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <center>
-    <h1 style="font-family: 'Black Han Sans', sans-serif; font-size: 80px;">강연의 민족</h1>
+    <span style="font-family: 'Black Han Sans', sans-serif; font-size: 5.5rem;">
+        <a href="{%url 'index'%}" style="color:rgb(38, 38, 39); text-decoration:none;">강연의 민족</a>
+    </span>
 </center>
+
 <body>
-    {%block content%}
-    {%endblock%}
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white" style="font-size:1.2em;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown mr-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            강연의 민족
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">회사소개</a>
+                            <a class="dropdown-item" href="#">공지사항</a>
+                            <a class="dropdown-item" href="#">Q & A</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mr-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            강연
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">강연 등록</a>
+                            <a class="dropdown-item" href="#">지역별 강연</a>
+                            <a class="dropdown-item" href="#">주제별 강연</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mr-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            클래스
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">클래스 등록</a>
+                            <a class="dropdown-item" href="#">지역별 클래스</a>
+                            <a class="dropdown-item" href="#">주제별 클래스</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown mr-4">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            크라우드 펀딩
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">강연 펀딩</a>
+                            <a class="dropdown-item" href="#">클래스 펀딩</a>
+                            <a class="dropdown-item" href="#">펀딩 결과</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <form id="logout" action="{%url 'logout'%}" method="POST">
+                            {%csrf_token%}
+                            <a class="nav-link" href="#" onclick="document.getElementById('logout').submit()" >로그아웃</a>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'signup'%}">회원가입</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link" href="{%url 'login'%}">로그인</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="강연 및 클래스 검색" aria-label="Search">
+                    <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        {%block content%}
+        {%endblock%}
+    </div>
 </body>
+
 <style>
     @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
 </style>
+<script>
+</script>
+
 </html>
