@@ -1,6 +1,6 @@
 so<!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,7 @@ so<!DOCTYPE html>
                             강연의 민족
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">회사소개</a>
+                            <a class="dropdown-item" href="{%url 'intro'%}">회사소개</a>
                             <a class="dropdown-item" href="#">공지사항</a>
                             <a class="dropdown-item" href="#">Q & A</a>
                         </div>
@@ -51,23 +51,23 @@ so<!DOCTYPE html>
                     <li class="nav-item dropdown mr-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            흴래스
+                            클래스
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">흴래스 등록</a>
-                            <a class="dropdown-item" href="#">지역별 흴래스</a>
-                            <a class="dropdown-item" href="#">주제별 흴래스</a>
+                            <a class="dropdown-item" href="#">클래스 등록</a>
+                            <a class="dropdown-item" href="#">지역별 클래스</a>
+                            <a class="dropdown-item" href="#">주제별 클래스</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown mr-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            희라우드 펀딩
+                            크라우드 펀딩
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">강연 펀딩</a>
-                            <a class="dropdown-item" href="#">흴래스 펀딩</a>
+                            <a class="dropdown-item" href="#">클래스 펀딩</a>
                             <a class="dropdown-item" href="#">펀딩 결과</a>
                         </div>
                     </li>
@@ -83,7 +83,7 @@ so<!DOCTYPE html>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{%url 'signup'%}">회웝가입</a>
+                        <a class="nav-link" href="{%url 'signup'%}">회원가입</a>
                     </li>
                     <li class="nav-item mr-2">
                         <a class="nav-link" href="{%url 'login'%}">로그인</a>
@@ -91,7 +91,7 @@ so<!DOCTYPE html>
                     {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="강연 밝 흴래스 검색" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="강연 및 클래스 검색" aria-label="Search">
                     <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
