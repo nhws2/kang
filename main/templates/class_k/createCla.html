@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load staticfiles%}
+<form action="{%url 'createCla'%}" method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <p>제목 : <input type="text" name="claTitle" placeholder="클래스 주제"></p>
+        <p>첨부파일 : <input type="file" name="claFile"></p>
+        <div class="input-group flex-nowrap">
+            <select class="form-control" id="region" name="region">
+                <option selected disabled>지역</option>
+                <option>서울</option>
+                <option>경기</option>
+                <option>인천</option>
+                <option>대전</option>
+                <option>충북</option>
+                <option>충남</option>
+                <option>강원</option>
+                <option>광주</option>
+                <option>대구</option>
+                <option>경북</option>
+                <option>부산</option>
+                <option>울산</option>
+                <option>경남</option>
+                <option>전북</option>
+                <option>전남</option>
+                <option>제주</option>
+            </select>
+        </div>
+        <div class="input-group flex-nowrap">
+            <select class="form-control" id="field" name="field">
+                <option selected disabled>카테고리</option>
+                <option>뷰티/헬스</option>
+                <option>어학/학문</option>
+                <option>시사/경제</option>
+                <option>자기계발</option>
+                <option>인간관계</option>
+                <option>만화/그림</option>
+                <option>음악/예술</option>
+                <option>독서/영화</option>
+                <option>영업/마케팅</option>
+                <option>SNS/유튜브</option>
+            </select>
+        </div>
+        <p>내용</p>
+        <textarea name="claContent" cols="100" rows="10" 
+        placeholder="튜터명, 수업 장소, 날짜, 시간, 커리큘럼(ex. 1~5주차), 수업료 등을 포함하여 상세하게 기입해 주세요."></textarea>
+        <input type="submit" value="등록">
+    </form>
+    {%endblock%}
