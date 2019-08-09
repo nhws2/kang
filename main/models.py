@@ -12,6 +12,8 @@ class Post(models.Model):
     subject = models.CharField(max_length = 100)
     like = models.ManyToManyField(User, related_name='likes',blank=True)
     pic = models.ImageField(upload_to='images/',null=True)
+    now_money = models.IntegerField(blank=True,default=0)
+    max_money = models.IntegerField(blank=True,default=0)
     created_at = models.DateTimeField(auto_now_add= True)
     updated_at = models.DateTimeField(auto_now = True)
 
@@ -24,7 +26,7 @@ class Comment(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50) 
+    name = models.CharField(max_length=50)
     region = models.CharField(max_length=50)
     sex = models.TextField(blank = True)
     age = models.CharField(max_length=50)
@@ -36,7 +38,6 @@ class Profile(models.Model):
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
             Profile.objects.create(user=instance)
-    
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()

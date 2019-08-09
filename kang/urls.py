@@ -23,24 +23,27 @@ import accounts.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',main.views.index,name='index'),
+    path('fund/<int:post_id>', main.views.fund, name='fund'),
+    path('money/<int:post_id>', main.views.money, name='money'),
+
+
     path('read/<int:post_id>',main.views.read,name='read'),
     path('update/<int:post_id>/',main.views.update,name='update'),
     path('delete/<int:post_id>/',main.views.delete,name='delete'),
+
     path('signup/', accounts.views.signup, name='signup'),
     path('login/', accounts.views.login, name='login'),
     path('logout/', accounts.views.logout, name='logout'),
+
     path('intro/', main.views.intro, name='intro'),
     path('notion/', main.views.notion, name='notion'),
     path('QnA/', main.views.QnA, name='QnA'),
+
     path('wholeLecture/', main.views.wholeLecture, name='wholeLecture'),
-    path('localLecture/', main.views.localLecture, name='localLecture'),
-    path('subjectLecture/', main.views.subjectLecture, name='subjectLecture'),
     path('wholeClass/', main.views.wholeClass, name='wholeClass'),
-    path('localClass/', main.views.localClass, name='localClass'),
-    path('subjectClass/', main.views.subjectClass, name='subjectClass'),
-    path('lectureFunding/', main.views.lectureFunding, name='lectureFunding'),
-    path('classFunding/', main.views.classFunding, name='classFunding'),
-    path('fundingResult/', main.views.fundingResult, name='fundingResult'),
+    path('wholeFund/', main.views.wholeFund, name='wholeFund'),
+
+    path('createFund/', main.views.createFund, name='createFund'),
     path('createLec/', main.views.createLec, name='createLec'),
     path('createCla/', main.views.createCla, name='createCla'),
     path('c_create/<int:post_id>', main.views.c_create, name='c_create'),

@@ -1,9 +1,9 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load staticfiles%}
-<form action="{%url 'createLec'%}" method="POST" enctype="multipart/form-data">
+<form action="{%url 'createFund'%}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
-        <p>제목 : <input type="text" name="title" placeholder="강연 제목"></p>
+        <p>제목 : <input type="text" name="title" placeholder="펀딩 제목"></p>
         <p>첨부파일 : <input type="file" name="pic"></p>
         <div class="input-group flex-nowrap">
             <select class="form-control" id="region" name="region">
@@ -44,7 +44,7 @@
         <p>내용</p>
         <textarea name="content" cols="100" rows="10" 
         placeholder="강연 주최자, 강연 장소, 날짜, 시간 등을 포함하여 상세하게 기입해 주세요."></textarea>
-        <br>
+        <p>목표 금액 : <input type="number" name="max_money" ></p>
         <input type="submit" value="등록">
     </form>
     {%endblock%}

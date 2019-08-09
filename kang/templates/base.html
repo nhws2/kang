@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,8 +70,6 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{%url 'wholeLecture'%}">전체 강연</a>
-                            <a class="dropdown-item" href="{%url 'localLecture'%}">지역별 강연</a>
-                            <a class="dropdown-item" href="{%url 'subjectLecture'%}">주제별 강연</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown mr-4">
@@ -82,20 +79,16 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{%url 'wholeClass'%}">전체 클래스</a>
-                            <a class="dropdown-item" href="{%url 'localClass'%}">지역별 클래스</a>
-                            <a class="dropdown-item" href="{%url 'subjectClass'%}">주제별 클래스</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown mr-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            크라우드 펀딩
+                            클라우드 펀딩
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{%url 'lectureFunding'%}">강연 펀딩</a>
-                            <a class="dropdown-item" href="{%url 'classFunding'%}">클래스 펀딩</a>
-                            <a class="dropdown-item" href="{%url 'fundingResult'%}">펀딩 결과</a>
+                            <a class="dropdown-item" href="{%url 'wholeFund'%}">클라우드 펀딩</a>
                         </div>
                     </li>
                 </ul>
@@ -109,7 +102,7 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{%url 'signup'%}">회원가입</a>
+                        <a class="nav-link" href="{%url 'signup'%}">회웝가입</a>
                     </li>
                     <li class="nav-item mr-2">
                         <a class="nav-link" href="{%url 'login'%}">로그인</a>
@@ -117,7 +110,7 @@
                     {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="강연 및 클래스 검색" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="강연 클래스 검색" aria-label="Search">
                     <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
@@ -125,14 +118,12 @@
         {%block content%}
         {%endblock%}
     </div>
-
-
     
 </body>
 
 <footer class="footer">
     (주)강연의민족 | 멋쟁이사자처럼7기 | 영남대학교 | 지니의요술램프팀 | 문의 : nhw_s2@naver.com<br>
-    사업자등록번호 : 012-34-56789 | 통신판매업 신고번호 : 제 2019-경산대동-8100호 | 고객센터 : 070-1234-5678<br>
+    사업잝등록번호 : 012-34-56789 | 통신팝매업 신고번호 : 제 2019-경산대띙-8100호 | 고객센터 : 070-1234-5678<br>
 </footer>
 
 </html>
