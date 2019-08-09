@@ -3,8 +3,8 @@
 {%load staticfiles%}
 <form action="{%url 'createLec'%}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
-        <p>제목 : <input type="text" name="lecTitle" placeholder="강연 주제"></p>
-        <p>첨부파일 : <input type="file" name="lecFile"></p>
+        <p>제목 : <input type="text" name="title" placeholder="강연 제목"></p>
+        <p>첨부파일 : <input type="file" name="pic"></p>
         <div class="input-group flex-nowrap">
             <select class="form-control" id="region" name="region">
                 <option selected disabled>지역</option>
@@ -27,8 +27,8 @@
             </select>
         </div>
         <div class="input-group flex-nowrap">
-            <select class="form-control" id="field" name="field">
-                <option selected disabled>카테고리</option>
+            <select class="form-control" id="field" name="subject">
+                <option selected disabled>강연 주제</option>
                 <option>뷰티/헬스</option>
                 <option>어학/학문</option>
                 <option>시사/경제</option>
@@ -42,7 +42,7 @@
             </select>
         </div>
         <p>내용</p>
-        <textarea name="lecContent" cols="100" rows="10" 
+        <textarea name="content" cols="100" rows="10" 
         placeholder="강연 주최자, 강연 장소, 날짜, 시간 등을 포함하여 상세하게 기입해 주세요."></textarea>
         <input type="submit" value="등록">
     </form>

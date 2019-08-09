@@ -12,34 +12,38 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <style>
-            @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
-            .footer {
-                padding:50px;
-                text-align:center;
-                background-color:darkgray;
-            }
+        @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
 
-            html, body {
-                height: 100%;
-            }
-            body {
-                display: flex;
-                flex-direction: column;
-            }
-            #main {
-                flex: 1;
-            }
-            .foot {
-                flex-shrink: 0;
-            }
-        </style>
+        .footer {
+            padding: 50px;
+            text-align: center;
+            background-color: darkgray;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #main {
+            flex: 1;
+        }
+
+        .foot {
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <center>
     <span style="font-family: 'Black Han Sans', sans-serif; font-size: 5.5rem;">
         <a href="{%url 'index'%}" style="color:rgb(38, 38, 39); text-decoration:none;">강연의 민족</a>
     </span>
 </center>
-
 <body>
     <div class="container" id="main">
         <nav class="navbar navbar-expand-lg navbar-light bg-white" style="font-size:1.2em;">
@@ -95,13 +99,12 @@
                         </div>
                     </li>
                 </ul>
-
                 <ul class="navbar-nav">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <form id="logout" action="{%url 'logout'%}" method="POST">
                             {%csrf_token%}
-                            <a class="nav-link" href="#" onclick="document.getElementById('logout').submit()" >로그아웃</a>
+                            <a class="nav-link" href="#" onclick="document.getElementById('logout').submit()">로그아웃</a>
                         </form>
                     </li>
                     {% else %}
@@ -125,7 +128,8 @@
 </body>
 
 <footer class="footer">
-        (주)강연의민족 | 멋쟁이사자처럼7기 | 영남대학교 | 지니의요술램프팀 | 문의 : nhw_s2@naver.com<br>
-        사업자등록번호 : 012-34-56789 | 통신판매업 신고번호 : 제 2019-경산대동-8100호 | 고객센터 : 070-1234-5678<br>
-    </footer>
+    (주)강연의민족 | 멋쟁이사자처럼7기 | 영남대학교 | 지니의요술램프팀 | 문의 : nhw_s2@naver.com<br>
+    사업자등록번호 : 012-34-56789 | 통신판매업 신고번호 : 제 2019-경산대동-8100호 | 고객센터 : 070-1234-5678<br>
+</footer>
+
 </html>
