@@ -1,17 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     title = models.CharField(max_length = 200)
     content = models.TextField(blank = True)
     region = models.CharField(max_length = 100)
+    category = models.CharField(max_length = 100)
     subject = models.CharField(max_length = 100)
-    option = models.CharField(max_length = 100)
     like = models.ManyToManyField(User, related_name='likes',blank=True)
+    pic = models.ImageField(upload_to='images/',null=True)
     created_at = models.DateTimeField(auto_now_add= True)
     updated_at = models.DateTimeField(auto_now = True)
-    pic = models.ImageField(upload_to='images/',null=True)
 
 class Comment(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE) 
@@ -29,3 +31,12 @@ class Profile(models.Model):
     phone = models.CharField(max_length=50)
     job = models.TextField(blank = True)
     field = models.TextField(blank = True)
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+    
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()

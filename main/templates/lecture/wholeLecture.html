@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load staticfiles%}
+<h1>전체 강연</h1>
+<a href="{%url 'createLec'%}"><button class="btn btn-dark my-2 my-sm-0" type="submit">강연 등록</button></a>
+<div class="row mt-3">
+    {%for post in posts%}
+    <div class="col-4 mb-3">
+        <div class="card" >
+            {%if post.pic == 'default'%}
+            <img src="{%static '구글주주.jpg'%}" class="card-img-top">
+            {%else%}
+            <img src="{{post.pic.url}}" class="card-img-top">
+            {%endif%}
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5> 
+            </div>
+            <a href="#" class="stretched-link"></a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
