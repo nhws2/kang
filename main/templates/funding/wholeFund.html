@@ -1,11 +1,13 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load staticfiles%}
-<h1>전체 펀딩</h1>
-<a href="{%url 'createFund'%}"><button class="btn btn-dark my-2 my-sm-0">펀딩 등록</button></a>
+<span style="font-family: 'Black Han Sans', sans-serif; font-size: 3.5em;">#전체 펀딩</span>
+<a href="{%url 'createFund'%}" style="float:right;" class="mt-4">
+    <button class="btn btn-dark my-2 my-sm-0" type="submit">펀딩 등록</button>
+</a> 
 <div class="row mt-3">
     {%for post in posts%}
-    <div class="col-4 mb-3">
+    <div class="col-6 col-md-4 mb-3">
         <div class="card" >
             {%if post.pic == 'default'%}
             <img src="{%static '구글주주.jpg'%}" class="card-img-top">

@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load staticfiles%}
+<br>
+<h2 style="font-family: 'Black Han Sans', sans-serif; font-size: 50px;">#지역별 클래스</h2><hr>
+<center>
+<button class="img-btn">
+<img src="{%static '지도.jpg'%}"  >
+</button>
+<br>
+<button><h3 style="font-family: 'Black Han Sans', sans-serif; font-size: 30px;">>>  지역을 선택해 주세요.  <<</h3></button><hr>
+</center>
+<style>
+    .img-btn{
+        background-color: white;
+        border:0px;
+        outline: 0px;
+    }
+    .img-btn:focus{
+        outline: 0px;
+
+    }
+</style>
+{%endblock%}

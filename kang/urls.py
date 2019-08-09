@@ -26,7 +26,6 @@ urlpatterns = [
     path('fund/<int:post_id>', main.views.fund, name='fund'),
     path('money/<int:post_id>', main.views.money, name='money'),
 
-
     path('read/<int:post_id>',main.views.read,name='read'),
     path('update/<int:post_id>/',main.views.update,name='update'),
     path('delete/<int:post_id>/',main.views.delete,name='delete'),
@@ -40,7 +39,9 @@ urlpatterns = [
     path('QnA/', main.views.QnA, name='QnA'),
 
     path('wholeLecture/', main.views.wholeLecture, name='wholeLecture'),
+    path('localLecture/', main.views.localLecture, name='localLecture'),
     path('wholeClass/', main.views.wholeClass, name='wholeClass'),
+    path('localClass/', main.views.localClass, name='localClass'),
     path('wholeFund/', main.views.wholeFund, name='wholeFund'),
 
     path('createFund/', main.views.createFund, name='createFund'),

@@ -16,7 +16,10 @@ def wholeLecture(request):
                 "posts":posts,
         }
 
-        return render(request, 'lecture/wholeLecture.html',context) 
+        return render(request, 'lecture/wholeLecture.html',context)
+
+def localLecture(request):
+        return render(request, 'lecture/localLecture.html')
 
 def wholeClass(request):
         posts = Post.objects.filter(category = "class")
@@ -24,6 +27,9 @@ def wholeClass(request):
                 "posts":posts,
         }
         return render(request, 'class_k/wholeClass.html',context) 
+
+def localClass(request):
+        return render(request, 'class_k/localClass.html')
 
 def wholeFund(request):
         posts = Post.objects.filter(category = "fund")
