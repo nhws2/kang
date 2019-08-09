@@ -13,9 +13,9 @@
             <img src="{{post.pic.url}}" class="card-img-top">
             {%endif%}
             <div class="card-body">
-                <h5 class="card-title">{{post.title}}</h5> 
+                <h5 class="card-title">{{post.title}}</h5></a>
             </div>
-            <a href="#" class="stretched-link"></a>
+            <a href="{%url 'read' post.id%}" class="stretched-link"></a>
         </div>
     </div>
     {%endfor%}

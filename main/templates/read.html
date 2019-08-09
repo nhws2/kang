@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load staticfiles%}
+<p>제목 : {{post.title}}</p>
+<p>첨부파일 : {{post.pic.url}}</p>
+<p>지역 : {{post.region}}</p>
+<p>분야 : {{post.subject}}</p>
+<p>글 내용</p>
+{{post.content|linebreaksbr}}
+<br>
+<a href="{%url 'wholeLecture'%}">돌아가기</a>
+<a href="{%url 'update' post.id%}">수정</a>
+<a href="{%url 'delete' post.id%}">삭제</a>
+{%endblock%}

@@ -95,3 +95,34 @@ def createCla(request):
                 post.pic = request.FILES.get('pic','default')
                 post.save()     
                 return redirect(wholeClass)
+
+def read(request,post_id):
+        post = Post.objects.get(id = post_id)
+
+        context={
+                "post":post,
+        }
+        return render(request, 'read.html',context)
+
+def update(request,post_id):
+        if request.method == "GET":
+                post = Post.objects.get(id = post_id)
+                context = {
+                "post":post,
+                }
+                return render(request,'update.html',context)
+
+        elif request.method == "POST":
+                post = Post.objects.get(id = post_id)
+                post.title = request.POST['title']
+                post.content = request.POST['content'] 
+                post.save()
+
+                return redirect(wholeLecture)
+
+def delete(request,post_id):
+
+        post = Post.objects.get(id = post_id)
+        post.delete()
+        
+        return redirect(wholeLecture)
