@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load staticfiles%}
+<h1>글수정 페이지</h1>
+<form action="{%url 'update' post.id%}" method="POST"> 
+    {%csrf_token%}
+    <p>제목</p>
+    <input type="text" name="title" value="{{post.title}}">
+    <p>첨부파일</p> 
+    <input type="file" name="pic" value="{{post.pic.url}}">
+    <p>지역</p>
+    <div class="input-group flex-nowrap">
+        <select class="form-control" id="region" name="region" value="{{post.region}}">
+            <option selected disabled>지역</option>
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+            <option>대전</option>
+            <option>충북</option>
+            <option>충남</option>
+            <option>강원</option>
+            <option>광주</option>
+            <option>대구</option>
+            <option>경북</option>
+            <option>부산</option>
+            <option>울산</option>
+            <option>경남</option>
+            <option>전북</option>
+            <option>전남</option>
+            <option>제주</option>
+        </select>
+    </div>
+    <p>분야</p>
+    <div class="input-group flex-nowrap">
+            <select class="form-control" id="field" name="subject" value="{{post.subject}}">
+                <option selected disabled>분야</option>
+                <option>뷰티/헬스</option>
+                <option>어학/학문</option>
+                <option>시사/경제</option>
+                <option>자기계발</option>
+                <option>인간관계</option>
+                <option>만화/그림</option>
+                <option>음악/예술</option>
+                <option>독서/영화</option>
+                <option>영업/마케팅</option>
+                <option>SNS/유튜브</option>
+            </select>
+        </div>
+    <p>내용</p>
+    <textarea name="content"cols="100" rows="10">{{post.content}}</textarea> 
+    <input type="submit" value="등록">
+</form>
+{%endblock%}
