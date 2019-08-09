@@ -1,14 +1,45 @@
 {%extends 'base.html'%}
 {%block content%}
 {%load staticfiles%}
-<p>제목 : {{post.title}}</p>
-<p>첨부파일 : {{post.pic.url}}</p>
-<p>지역 : {{post.region}}</p>
-<p>분야 : {{post.subject}}</p>
-<p>글 내용</p>
-{{post.content|linebreaksbr}}
-<br>
-<a href="{%url 'wholeLecture'%}">돌아가기</a>
-<a href="{%url 'update' post.id%}">수정</a>
-<a href="{%url 'delete' post.id%}">삭제</a>
+<div>
+    <p>제목 : {{post.title}}</p>
+    <img src="{{post.pic.url}}" alt=""> <br>
+    <p>지역 : {{post.region}}</p>
+    <p>분야 : {{post.subject}}</p>
+    <p>글 내용</p>
+    {{post.content|linebreaksbr}}
+    <br>
+    {%if post.category == "lecture"%}
+    <a href="{%url 'wholeLecture'%}">돌아가기</a>
+    {%elif post.category == "class"%}
+    <a href="{%url 'wholeClass'%}">돌아가기</a>
+    {%endif%}
+    <a href="{%url 'update' post.id%}">수정</a>
+    <a href="{%url 'delete' post.id%}">삭제</a>
+</div>
+
+{% if user.is_authenticated %}
+<form action="{%url 'c_create' post.id%}" method="POST">
+    {%csrf_token%}
+    <div class="input-group mt-5 mb-5">
+        <input type="text" name="comment" class="form-control" placeholder="댓글을 입력하세요">
+        <div class="input-group-append">
+            <button class="btn btn-danger"><i class="fas fa-pencil-alt"></i></button>
+        </div>
+    </div>
+</form>
+{%endif%}
+
+<div>
+    <ul class="list-group mb-5">
+        {%for c in comment%}
+        <li class="list-group-item list-group-item-light">
+            <span style="font-weight: bold;font-size:0.7em;">{{c.user}}</span>
+            <br>
+            {{c.content}}
+        </li>
+        {%endfor%}
+    </ul>
+</div>
+ 
 {%endblock%}

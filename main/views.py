@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Post,Comment
 def index(request):
-
         return render(request,'index.html')
+
 
 def intro(request):
         return render(request, 'kangmin/intro.html')
@@ -96,11 +96,13 @@ def createCla(request):
                 post.save()     
                 return redirect(wholeClass)
 
+
 def read(request,post_id):
         post = Post.objects.get(id = post_id)
-
+        comment = Comment.objects.filter(post=post.id)
         context={
                 "post":post,
+                "comment":comment,
         }
         return render(request, 'read.html',context)
 
@@ -126,3 +128,13 @@ def delete(request,post_id):
         post.delete()
         
         return redirect(wholeLecture)
+
+
+def c_create(request,post_id):
+        if request.method == "POST":
+                comment = Comment() 
+                comment.user = request.user
+                comment.post = Post.objects.get(id=post_id)
+                comment.content = request.POST['comment']
+                comment.save() 
+                return redirect(read,comment.post.id)
