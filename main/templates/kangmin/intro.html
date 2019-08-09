@@ -6,13 +6,27 @@
         <title>회사소개</title>
         <Style>
             .intro {
-                color: black;
+                font-family: 'East Sea Dokdo', cursive;
+                text-align: center;
+                font-size: 40px;
+                color:rgba(0, 0, 0, 0.800);
+            }
+            .span {
+                font-family: 'East Sea Dokdo', cursive;
+                text-align: center;
+                font-size: 60px;
+                color:rgba(0, 0, 0, 0.800);
+            }
+            .bt {
+                
             }
         </Style>
+        <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h2 class="intro">
-        강연의 민족은 생각했습니다.<br><br>
+        <img src="{%static '야나두.jpg'%}" class="w-100" style="height: 300px;">
+        <h2 class="intro"><br>
+        <span class="span">강연의 민족</span>은 생각했습니다.<br><br>
 
         꼭 유명인사나 저명하신 분들만 강단에 설 수 있는 것일까?<br>
         평범한 사람들의 평범하지 않은 이야기를 듣고 싶다!<br><br>
@@ -21,16 +35,18 @@
 
         "자신의 이야기를 나누고 싶어하는 누구에게나 강단에 설 기회를 주자!"<br><br>
 
-        그래서 탄생했습니다. "강연의 민족"<br><br>
+        그래서 탄생했습니다. <span class="span">"강연의 민족"</span><br><br>
         
         강민의 핵심 가치는 '누구나 연사가 될수 있다.' 입니다.<br><br>
 
-        사람들에게 들려주고 싶은 자신만의 이야기가 있으신가요? --> 강연<br>
-        많은 사람들과 내가 가진 재능을 나눠보고 싶으신가요? --> 클래스<br>
-        그렇다면, 지금 바로 강연의 민족에서 그 꿈을 이뤄보세요.<br><br>
+        사람들에게 들려주고 싶은 자신만의 이야기가 있으신가요? -->  <span class="bt">
+        <a href="{%url 'wholeLecture'%}"><button type="button" class="btn btn-dark btn-lg">강연</button></a></span><br>
+        많은 사람들과 내가 가진 재능을 나눠보고 싶으신가요? -->  <span class="bt">
+        <a href="{%url 'wholeClass'%}"><button type="button" class="btn btn-dark btn-lg">클래스</button></a></span><br>
+        그렇다면, 지금 바로 <span class="span">강연의 민족</span>에서 그 꿈을 이뤄보세요.<br><br>
 
-        "Everyone can be a speaker as everyone is special."
-        </h2>
+        <span class="span">"Everyone can be a speaker as everyone is special."</span>
+        </h2><br><br>
     </body>
 </html>
 {%endblock%}
