@@ -3,47 +3,47 @@
 {%load staticfiles%}
 <form action="{%url 'createCla'%}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
-        <p>제목 : <input type="text" name="title" placeholder="클래스 제목"></p>
-        <p>첨부파일 : <input type="file" name="pic"></p>
+        <p>Ã¬Â Å“Ã«ÂªÂ© : <input type="text" name="title" placeholder="Ã­ï¿½Â´Ã«Å¾ËœÃ¬Å Â¤ Ã¬Â Å“Ã«ÂªÂ©"></p>
+        <p>Ã¬Â²Â¨Ã«Â¶â‚¬Ã­Å’Å’Ã¬ï¿½Â¼ : <input type="file" name="pic"></p>
         <div class="input-group flex-nowrap">
             <select class="form-control" id="region" name="region">
-                <option selected disabled>지역</option>
-                <option>서울</option>
-                <option>경기</option>
-                <option>인천</option>
-                <option>대전</option>
-                <option>충북</option>
-                <option>충남</option>
-                <option>강원</option>
-                <option>광주</option>
-                <option>대구</option>
-                <option>경북</option>
-                <option>부산</option>
-                <option>울산</option>
-                <option>경남</option>
-                <option>전북</option>
-                <option>전남</option>
-                <option>제주</option>
+                <option selected disabled>Ã¬Â§â‚¬Ã¬â€”Â­</option>
+                <option>Ã¬â€žÅ“Ã¬Å¡Â¸</option>
+                <option>ÃªÂ²Â½ÃªÂ¸Â°</option>
+                <option>Ã¬ï¿½Â¸Ã¬Â²Å“</option>
+                <option>Ã«Å’â‚¬Ã¬Â â€ž</option>
+                <option>Ã¬Â¶Â©Ã«Â¶ï¿½</option>
+                <option>Ã¬Â¶Â©Ã«â€šÂ¨</option>
+                <option>ÃªÂ°â€¢Ã¬â€ºï¿½</option>
+                <option>ÃªÂ´â€˜Ã¬Â£Â¼</option>
+                <option>Ã«Å’â‚¬ÃªÂµÂ¬</option>
+                <option>ÃªÂ²Â½Ã«Â¶ï¿½</option>
+                <option>Ã«Â¶â‚¬Ã¬â€šÂ°</option>
+                <option>Ã¬Å¡Â¸Ã¬â€šÂ°</option>
+                <option>ÃªÂ²Â½Ã«â€šÂ¨</option>
+                <option>Ã¬Â â€žÃ«Â¶ï¿½</option>
+                <option>Ã¬Â â€žÃ«â€šÂ¨</option>
+                <option>Ã¬Â Å“Ã¬Â£Â¼</option>
             </select>
         </div>
         <div class="input-group flex-nowrap">
             <select class="form-control" id="field" name="subject">
-                <option selected disabled>클래스 주제</option>
-                <option>뷰티/헬스</option>
-                <option>어학/학문</option>
-                <option>시사/경제</option>
-                <option>자기계발</option>
-                <option>인간관계</option>
-                <option>만화/그림</option>
-                <option>음악/예술</option>
-                <option>독서/영화</option>
-                <option>영업/마케팅</option>
-                <option>SNS/유튜브</option>
+                <option selected disabled>Ã­ï¿½Â´Ã«Å¾ËœÃ¬Å Â¤ Ã¬Â£Â¼Ã¬Â Å“</option>
+                <option>Ã«Â·Â°Ã­â€¹Â°/Ã­â€”Â¬Ã¬Å Â¤</option>
+                <option>Ã¬â€“Â´Ã­â€¢â„¢/Ã­â€¢â„¢Ã«Â¬Â¸</option>
+                <option>Ã¬â€¹Å“Ã¬â€šÂ¬/ÃªÂ²Â½Ã¬Â Å“</option>
+                <option>Ã¬Å¾ï¿½ÃªÂ¸Â°ÃªÂ³â€žÃ«Â°Å“</option>
+                <option>Ã¬ï¿½Â¸ÃªÂ°â€žÃªÂ´â‚¬ÃªÂ³â€ž</option>
+                <option>Ã«Â§Å’Ã­â„¢â€�/ÃªÂ·Â¸Ã«Â¦Â¼</option>
+                <option>Ã¬ï¿½Å’Ã¬â€¢â€¦/Ã¬ËœË†Ã¬Ë†Â </option>
+                <option>Ã«ï¿½â€¦Ã¬â€žÅ“/Ã¬Ëœï¿½Ã­â„¢â€�</option>
+                <option>Ã¬Ëœï¿½Ã¬â€”â€¦/Ã«Â§Ë†Ã¬Â¼â‚¬Ã­Å’â€¦</option>
+                <option>SNS/Ã¬Å“Â Ã­Å Å“Ã«Â¸Å’</option>
             </select>
         </div>
-        <p>내용</p>
+        <p>Ã«â€šÂ´Ã¬Å¡Â©</p>
         <textarea name="content" cols="100" rows="10" 
-        placeholder="튜터명, 수업 장소, 날짜, 시간, 커리큘럼(ex. 1~5주차), 수업료 등을 포함하여 상세하게 기입해 주세요."></textarea>
-        <input type="submit" value="등록">
+        placeholder="Ã­Å Å“Ã­â€žÂ°Ã«Âªâ€¦, Ã¬Ë†ËœÃ¬â€”â€¦ Ã¬Å¾Â¥Ã¬â€ Å’, Ã«â€šÂ Ã¬Â§Å“, Ã¬â€¹Å“ÃªÂ°â€ž, Ã¬Â»Â¤Ã«Â¦Â¬Ã­ï¿½ËœÃ«Å¸Â¼(ex. 1~5Ã¬Â£Â¼Ã¬Â°Â¨), Ã¬Ë†ËœÃ¬â€”â€¦Ã«Â£Å’ Ã«â€œÂ±Ã¬ï¿½â€ž Ã­ï¿½Â¬Ã­â€¢Â¨Ã­â€¢ËœÃ¬â€”Â¬ Ã¬Æ’ï¿½Ã¬â€žÂ¸Ã­â€¢ËœÃªÂ²Å’ ÃªÂ¸Â°Ã¬Å¾â€¦Ã­â€¢Â´ Ã¬Â£Â¼Ã¬â€žÂ¸Ã¬Å¡â€�."></textarea>
+        <input type="submit" value="Ã«â€œÂ±Ã«Â¡ï¿½">
     </form>
     {%endblock%}
