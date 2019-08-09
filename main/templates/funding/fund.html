@@ -3,13 +3,14 @@
 {%load staticfiles%}
 <div class="row">
   <div class="col-8">
-    <p>제목 : {{post.title}}</p>
-    <img src="{{post.pic.url}}" alt=""> <br>
+    <h1 class="mt-4">제목 : {{post.title}}</h1>
+    <img class="img-fluid rounded" src="{{post.pic.url}}" alt=""> <br>
     <p>지역 : {{post.region}}</p>
     <p>분야 : {{post.subject}}</p>
     <p>글 내용</p>
     {{post.content|linebreaksbr}}
     <br>
+    <hr>
     <a href="{%url 'wholeFund'%}">돌아가기</a>
     <a href="{%url 'update' post.id%}">수정</a>
     <a href="{%url 'delete' post.id%}">삭제</a>
@@ -25,7 +26,10 @@
     </form>
     {%endif%}
   </div>
-  <div class="col-4">
+  <br><br>
+  <div class="card my-4">
+   <h5 class="card-header">펀딩</h5>
+   <div class="card-body">
     <p>목표 금액 : {{post.max_money}}원</p>
 
     <p>현재 금액 : {{post.now_money}}원</p>
@@ -37,9 +41,13 @@
       <br>
       <input type="number" name="money"> 원 만큼
       <br>
-      <input type="submit" value="후원하기">
+      <br>
+      <span class="input-group-btn">
+          <button class="btn btn-secondary" type="submit" value="후원하기">후원하기</button>
+        </span>
     </form>
   </div>
+</div>
 </div>
 
 <div>
