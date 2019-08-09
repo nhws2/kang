@@ -42,7 +42,6 @@ def wholeClass(request):
         context = {
                 "posts":posts,
         }
-
         return render(request, 'class_k/wholeClass.html',context)
 
 def localClass(request):
