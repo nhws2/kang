@@ -43,4 +43,6 @@ urlpatterns = [
     path('fundingResult/', main.views.fundingResult, name='fundingResult'),
     path('createLec/', main.views.createLec, name='createLec'),
     path('createCla/', main.views.createCla, name='createCla'),
+    path('c_create/<int:post_id>', main.views.c_create, name='c_create'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
